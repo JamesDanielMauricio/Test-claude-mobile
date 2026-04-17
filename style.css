@@ -117,7 +117,7 @@ strong { color: var(--accent); font-weight: 700; }
 .section__subtitle {
   color: var(--text-muted);
   font-size: var(--fs-lg);
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-6);
 }
 
 /* Buttons */
@@ -467,8 +467,8 @@ strong { color: var(--accent); font-weight: 700; }
 .skills__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-6);
-  margin-bottom: var(--space-12);
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
 }
 
 .skill-category {
@@ -1036,6 +1036,10 @@ strong { color: var(--accent); font-weight: 700; }
 
 /* ── LG: desktop (≥ 900px) ───────────────────────────────── */
 @media (min-width: 900px) {
+  /* Restore larger spacing on desktop */
+  .section__subtitle { margin-bottom: var(--space-12); }
+  .skills__grid { gap: var(--space-6); margin-bottom: var(--space-12); }
+
   /* About: avatar beside text */
   .about__grid { grid-template-columns: 220px 1fr; }
 
