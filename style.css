@@ -52,6 +52,7 @@
   --space-2:  .5rem;
   --space-3:  .75rem;
   --space-4:  1rem;
+  --space-5:  1.25rem;
   --space-6:  1.5rem;
   --space-8:  2rem;
   --space-12: 3rem;
@@ -939,17 +940,82 @@ strong { color: var(--accent); font-weight: 700; }
 
 
 /* ── 15. RESPONSIVE ─────────────────────────────────────────── */
+/*
+   Breakpoints (mobile-first):
+   xs  — max 400px   (small phones: iPhone SE, Galaxy A series)
+   sm  — min 480px   (large phones)
+   md  — min 640px   (tablet / landscape phone)
+   lg  — min 900px   (desktop)
+   xl  — min 1200px  (wide desktop)
+   nav — max 768px   (mobile nav threshold)
+*/
 
-/* Tablet (640px+) */
+/* ── XS: small phones (≤ 400px) ──────────────────────────── */
+@media (max-width: 400px) {
+  /* Tighter container on tiny screens */
+  .container { padding: 0 var(--space-4); }
+
+  /* Reduce section vertical space */
+  .section { padding: var(--space-12) 0; }
+
+  /* Hero */
+  .hero__name {
+    font-size: 2.25rem;
+    letter-spacing: -1px;
+  }
+  .hero__title { font-size: var(--fs-lg); }
+  .hero__intro { font-size: var(--fs-base); }
+  .hero__cta   { flex-direction: column; }
+  .hero__cta .btn { width: 100%; justify-content: center; }
+
+  /* Badges stack vertically on very small screens */
+  .hero__badges { flex-direction: column; gap: var(--space-3); }
+  .badge        { flex-direction: row; gap: var(--space-3); min-width: unset; width: 100%; justify-content: flex-start; padding: var(--space-3) var(--space-4); }
+
+  /* Section titles */
+  .section__title    { font-size: var(--fs-2xl); }
+  .section__subtitle { font-size: var(--fs-base); margin-bottom: var(--space-8); }
+
+  /* Skills — keep 1 column, tighter padding */
+  .skill-category { padding: var(--space-4) var(--space-6); }
+
+  /* Project cards — remove badge clearance that causes overflow */
+  .project-card          { padding: var(--space-6); }
+  .project-card__top     { padding-right: var(--space-12); }
+  .project-card__title   { font-size: var(--fs-lg); }
+  .project-card__metrics { gap: var(--space-3); }
+
+  /* Timeline — tighter indentation */
+  .timeline              { padding-left: var(--space-6); }
+  .timeline__dot         { left: calc(-1 * var(--space-6) + 1px); }
+  .timeline__card        { padding: var(--space-4) var(--space-6); }
+  .timeline__role        { font-size: var(--fs-base); }
+
+  /* Contact */
+  .contact__form { gap: var(--space-4); }
+
+  /* Back-to-top closer to edge */
+  .back-to-top { bottom: var(--space-4); right: var(--space-4); }
+}
+
+/* ── SM: large phones (≥ 480px) ──────────────────────────── */
+@media (min-width: 480px) {
+  .section { padding: var(--space-16) 0; }
+
+  .hero__badges { gap: var(--space-3); }
+}
+
+/* ── MD: tablet / landscape (≥ 640px) ────────────────────── */
 @media (min-width: 640px) {
-  .skills__grid {
-    grid-template-columns: 1fr 1fr;
-  }
+  .section { padding: var(--space-24) 0; }
 
-  .projects__grid {
-    grid-template-columns: 1fr 1fr;
-  }
+  /* 2-column skill cards */
+  .skills__grid { grid-template-columns: 1fr 1fr; }
 
+  /* 2-column project grid */
+  .projects__grid { grid-template-columns: 1fr 1fr; }
+
+  /* Timeline date badge moves beside the role */
   .timeline__header {
     flex-direction: row;
     justify-content: space-between;
@@ -958,19 +1024,30 @@ strong { color: var(--accent); font-weight: 700; }
   }
 }
 
-/* Desktop (900px+) */
+/* ── LG: desktop (≥ 900px) ───────────────────────────────── */
 @media (min-width: 900px) {
-  .about__grid {
-    grid-template-columns: 220px 1fr;
-  }
+  /* About: avatar beside text */
+  .about__grid { grid-template-columns: 220px 1fr; }
 
-  .contact__grid {
-    grid-template-columns: 1fr 1fr;
-  }
+  /* Contact: info beside form */
+  .contact__grid { grid-template-columns: 1fr 1fr; }
 }
 
-/* Mobile nav */
+/* ── XL: wide desktop (≥ 1200px) ────────────────────────── */
+@media (min-width: 1200px) {
+  /* Slightly wider container for big screens */
+  .container { max-width: 1200px; }
+
+  /* 4-column skill grid on wide screens */
+  .skills__grid { grid-template-columns: repeat(4, 1fr); }
+
+  /* Hero gets more breathing room */
+  .hero__name { font-size: var(--fs-5xl); }
+}
+
+/* ── NAV: mobile navigation (≤ 768px) ───────────────────── */
 @media (max-width: 768px) {
+  /* Slide-down mobile menu */
   .navbar__links {
     position: fixed;
     top: var(--navbar-h);
@@ -986,15 +1063,33 @@ strong { color: var(--accent); font-weight: 700; }
     z-index: 99;
   }
 
+  .navbar__links a { font-size: var(--fs-base); } /* bigger tap targets */
   .navbar__links.open { transform: translateY(0); }
 
   .hamburger { display: flex; }
 
+  /* Hamburger → X animation */
   .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .hamburger.open span:nth-child(2) { opacity: 0; }
   .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+  /* Hero tweaks for mid-size mobile */
   .hero__name { letter-spacing: -1px; }
+  .hero__content { padding-bottom: var(--space-12); }
 
-  .project-card__top { padding-right: var(--space-8); }
+  /* Project badge clearance */
+  .project-card__top { padding-right: var(--space-12); }
+
+  /* About details: break long email/linkedin text */
+  .about__details li {
+    flex-wrap: wrap;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
+  /* Social links: allow email to wrap */
+  .social-link { word-break: break-word; overflow-wrap: anywhere; }
+
+  /* Timeline type pill: wrap if needed */
+  .timeline__type { margin-left: 0; display: block; margin-top: var(--space-1); }
 }
