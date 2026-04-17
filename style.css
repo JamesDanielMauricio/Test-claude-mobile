@@ -1080,12 +1080,20 @@ strong { color: var(--accent); font-weight: 700; }
     padding: var(--space-8) 0;
     gap: var(--space-6);
     transform: translateY(-110%);
-    transition: transform .3s ease;
+    visibility: hidden;
+    pointer-events: none;
+    /* delay visibility until after slide-up finishes; no delay on slide-down */
+    transition: transform .3s ease, visibility 0s .3s;
     z-index: 99;
   }
 
   .navbar__links a { font-size: var(--fs-base); } /* bigger tap targets */
-  .navbar__links.open { transform: translateY(0); }
+  .navbar__links.open {
+    transform: translateY(0);
+    visibility: visible;
+    pointer-events: auto;
+    transition: transform .3s ease, visibility 0s 0s;
+  }
 
   .hamburger { display: flex; }
 
