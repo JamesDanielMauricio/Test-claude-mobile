@@ -4,27 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO Meta Tags -->
-  <title>Alex Carter | Full-Stack Developer</title>
-  <meta name="description" content="Alex Carter is a full-stack developer specializing in building modern, performant web applications." />
-  <meta name="keywords" content="full-stack developer, web developer, portfolio, JavaScript, React, Node.js" />
-  <meta name="author" content="Alex Carter" />
+  <!-- SEO -->
+  <title>James Daniel Mauricio | Senior Bubble.io Developer</title>
+  <meta name="description" content="Senior Bubble.io Developer with 5+ years building scalable web apps for 140K+ users. Specialized in no-code systems, API integrations, and hybrid backend solutions." />
+  <meta name="keywords" content="Bubble.io developer, no-code developer, Node.js, API integration, web application developer, Philippines" />
+  <meta name="author" content="James Daniel Mauricio" />
 
-  <!-- Open Graph (social sharing) -->
-  <meta property="og:title" content="Alex Carter | Full-Stack Developer" />
-  <meta property="og:description" content="Portfolio of Alex Carter — full-stack developer building modern web apps." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="James Daniel Mauricio | Senior Bubble.io Developer" />
+  <meta property="og:description" content="Building scalable no-code and hybrid web applications for global clients." />
   <meta property="og:type" content="website" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ===================== NAVIGATION ===================== -->
+  <!-- ===== NAVIGATION ===== -->
   <header class="navbar" id="navbar">
     <div class="container navbar__inner">
-      <a href="#hero" class="navbar__logo">AC<span class="accent">.</span></a>
+      <a href="#hero" class="navbar__logo">JDM<span class="accent">.</span></a>
 
-      <nav class="navbar__links" id="nav-links">
+      <nav class="navbar__links" id="nav-links" role="navigation" aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
@@ -33,12 +33,10 @@
       </nav>
 
       <div class="navbar__actions">
-        <!-- Dark/Light mode toggle -->
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-          <span class="theme-toggle__icon" id="theme-icon">☀️</span>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">
+          <span id="theme-icon">☀️</span>
         </button>
-        <!-- Hamburger for mobile -->
-        <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -47,221 +45,243 @@
 
   <main>
 
-    <!-- ===================== HERO ===================== -->
+    <!-- ===== HERO ===== -->
     <section class="hero" id="hero">
       <div class="container hero__content">
-        <p class="hero__greeting fade-in">Hi, I'm</p>
-        <h1 class="hero__name fade-in delay-1">Alex Carter<span class="accent">.</span></h1>
-        <h2 class="hero__title fade-in delay-2">Full-Stack Developer</h2>
+        <!-- Mono label above name — sets the tone immediately -->
+        <p class="hero__greeting fade-in">👋 Hi, I'm</p>
+        <h1 class="hero__name fade-in delay-1">James Daniel<br>Mauricio<span class="accent">.</span></h1>
+        <h2 class="hero__title fade-in delay-2">
+          Senior Bubble.io Developer
+          <span class="hero__title-sub">& Hybrid Backend Engineer</span>
+        </h2>
         <p class="hero__intro fade-in delay-3">
-          I craft fast, accessible, and beautiful web experiences —
-          from pixel-perfect UIs to scalable back-end systems.
+          I build scalable, production-ready web applications using Bubble.io and custom backend solutions —
+          serving over <strong>140,000 users</strong> across Japan, Belgium, and beyond.
         </p>
         <div class="hero__cta fade-in delay-4">
-          <a href="#projects" class="btn btn--primary">View My Work</a>
-          <a href="#contact" class="btn btn--outline">Get In Touch</a>
+          <a href="#projects" class="btn btn--primary">View Projects</a>
+          <a href="#contact" class="btn btn--outline">Hire Me</a>
+        </div>
+
+        <!-- Quick stat badges -->
+        <div class="hero__badges fade-in delay-5">
+          <div class="badge"><span class="badge__num">5+</span><span class="badge__label">Years Experience</span></div>
+          <div class="badge"><span class="badge__num">140K+</span><span class="badge__label">Users Served</span></div>
+          <div class="badge"><span class="badge__num">GMT+8</span><span class="badge__label">Philippines</span></div>
         </div>
       </div>
-      <!-- Decorative animated blob -->
       <div class="hero__blob" aria-hidden="true"></div>
+      <div class="hero__blob hero__blob--2" aria-hidden="true"></div>
     </section>
 
-    <!-- ===================== ABOUT ===================== -->
+    <!-- ===== ABOUT ===== -->
     <section class="section" id="about">
       <div class="container about__grid">
-        <div class="about__image-wrap reveal">
-          <!-- Replace src with your actual photo -->
-          <div class="about__avatar" aria-label="Profile photo placeholder">AC</div>
+
+        <div class="about__visual reveal">
+          <!-- Initials avatar — replace with <img> when you have a photo -->
+          <div class="about__avatar" aria-label="James Daniel Mauricio">JDM</div>
+          <!-- Status pill -->
+          <div class="about__status">
+            <span class="status-dot"></span> Available for new projects
+          </div>
         </div>
+
         <div class="about__text reveal">
           <h2 class="section__title">About Me</h2>
           <p>
-            I'm a full-stack developer with 5+ years of experience building
-            products for startups and enterprises. I love solving complex
-            problems and turning ideas into polished, production-ready software.
+            I'm a Senior Bubble.io Developer based in the Philippines with over 5 years of experience
+            turning complex business ideas into production-grade web applications. I specialize in
+            building systems that scale — from internal ops tools to consumer platforms handling
+            hundreds of thousands of concurrent users.
           </p>
           <p>
-            When I'm not pushing code, you'll find me hiking, contributing to
-            open-source projects, or brewing the perfect espresso.
+            My edge is bridging the gap between no-code speed and custom-code power. When Bubble.io
+            hits its limits, I extend it with Node.js backend services, custom APIs, and advanced
+            automation — delivering full-stack results without full-stack timelines.
           </p>
+          <p>
+            I've shipped for startups, agencies, and enterprise clients in Japan, Belgium, and across
+            the globe — always with a focus on performance, clean database architecture, and reliability.
+          </p>
+
           <ul class="about__details">
-            <li><span class="about__label">Location</span> San Francisco, CA</li>
-            <li><span class="about__label">Email</span> alex@example.com</li>
-            <li><span class="about__label">Availability</span> Open to opportunities</li>
+            <li><span class="about__label">Location</span> Philippines (GMT+8)</li>
+            <li><span class="about__label">Email</span> jamesdanielmauricio@gmail.com</li>
+            <li><span class="about__label">LinkedIn</span> linkedin.com/in/jamesdanielmauricio</li>
+            <li><span class="about__label">Education</span> BS Industrial Engineering, Tarlac State University</li>
           </ul>
-          <a href="#" class="btn btn--primary" download>Download CV</a>
         </div>
+
       </div>
     </section>
 
-    <!-- ===================== SKILLS ===================== -->
+    <!-- ===== SKILLS ===== -->
     <section class="section section--alt" id="skills">
       <div class="container">
         <h2 class="section__title text-center reveal">Skills</h2>
-        <p class="section__subtitle text-center reveal">Technologies I work with every day</p>
+        <p class="section__subtitle text-center reveal">What I bring to every project</p>
 
-        <!-- Progress-bar skills -->
-        <div class="skills__bars reveal">
-          <!-- data-level sets the fill percentage (used by JS) -->
-          <div class="skill-bar">
-            <div class="skill-bar__header">
-              <span>JavaScript / TypeScript</span><span>90%</span>
-            </div>
-            <div class="skill-bar__track"><div class="skill-bar__fill" data-level="90"></div></div>
+        <!-- Skill category cards -->
+        <div class="skills__grid reveal">
+
+          <div class="skill-category">
+            <div class="skill-category__icon">⚙️</div>
+            <h3 class="skill-category__title">No-Code / Bubble.io</h3>
+            <ul class="skill-category__list">
+              <li>Advanced Workflow Design</li>
+              <li>Database Architecture</li>
+              <li>Performance Optimization</li>
+              <li>Custom Plugin Logic</li>
+              <li>Admin Dashboard Builds</li>
+            </ul>
           </div>
-          <div class="skill-bar">
-            <div class="skill-bar__header">
-              <span>React &amp; Next.js</span><span>85%</span>
-            </div>
-            <div class="skill-bar__track"><div class="skill-bar__fill" data-level="85"></div></div>
+
+          <div class="skill-category">
+            <div class="skill-category__icon">🔧</div>
+            <h3 class="skill-category__title">Backend & Frontend</h3>
+            <ul class="skill-category__list">
+              <li>Node.js</li>
+              <li>EJS Templating</li>
+              <li>HTML / CSS / JavaScript</li>
+              <li>REST API Design</li>
+              <li>Webhooks</li>
+            </ul>
           </div>
-          <div class="skill-bar">
-            <div class="skill-bar__header">
-              <span>Node.js &amp; Express</span><span>80%</span>
-            </div>
-            <div class="skill-bar__track"><div class="skill-bar__fill" data-level="80"></div></div>
+
+          <div class="skill-category">
+            <div class="skill-category__icon">🔗</div>
+            <h3 class="skill-category__title">Integrations & APIs</h3>
+            <ul class="skill-category__list">
+              <li>Bubble.io API Connector</li>
+              <li>REST APIs & Webhooks</li>
+              <li>Make (Integromat)</li>
+              <li>n8n Automation</li>
+              <li>Third-party Services</li>
+            </ul>
           </div>
-          <div class="skill-bar">
-            <div class="skill-bar__header">
-              <span>PostgreSQL &amp; MongoDB</span><span>75%</span>
-            </div>
-            <div class="skill-bar__track"><div class="skill-bar__fill" data-level="75"></div></div>
+
+          <div class="skill-category">
+            <div class="skill-category__icon">💳</div>
+            <h3 class="skill-category__title">Payments</h3>
+            <ul class="skill-category__list">
+              <li>Stripe</li>
+              <li>Apple Pay / Google Pay</li>
+              <li>Amazon Pay</li>
+              <li>Paidy / GMO-PG</li>
+              <li>Fincode</li>
+            </ul>
           </div>
-          <div class="skill-bar">
-            <div class="skill-bar__header">
-              <span>CSS / Tailwind</span><span>88%</span>
-            </div>
-            <div class="skill-bar__track"><div class="skill-bar__fill" data-level="88"></div></div>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-bar__header">
-              <span>Docker &amp; DevOps</span><span>65%</span>
-            </div>
-            <div class="skill-bar__track"><div class="skill-bar__fill" data-level="65"></div></div>
-          </div>
+
         </div>
 
-        <!-- Tag cloud for tools / soft skills -->
+        <!-- Core strength tags -->
         <div class="skills__tags reveal">
-          <span class="tag">Git</span>
-          <span class="tag">GraphQL</span>
-          <span class="tag">REST APIs</span>
-          <span class="tag">AWS</span>
-          <span class="tag">Linux</span>
-          <span class="tag">Figma</span>
-          <span class="tag">Jest</span>
-          <span class="tag">CI/CD</span>
-          <span class="tag">Agile</span>
-          <span class="tag">Redis</span>
-          <span class="tag">Prisma</span>
-          <span class="tag">Webpack</span>
+          <span class="tag">Scalable Architecture</span>
+          <span class="tag">Workflow Optimization</span>
+          <span class="tag">Performance Tuning</span>
+          <span class="tag">Complex Business Logic</span>
+          <span class="tag">Hybrid No-Code + Backend</span>
+          <span class="tag">Database Design</span>
+          <span class="tag">API Integration</span>
+          <span class="tag">SaaS Platforms</span>
+          <span class="tag">MVP Development</span>
+          <span class="tag">Payment Systems</span>
         </div>
       </div>
     </section>
 
-    <!-- ===================== PROJECTS ===================== -->
+    <!-- ===== PROJECTS ===== -->
     <section class="section" id="projects">
       <div class="container">
-        <h2 class="section__title text-center reveal">Projects</h2>
-        <p class="section__subtitle text-center reveal">A selection of things I've built</p>
+        <h2 class="section__title text-center reveal">Featured Projects</h2>
+        <p class="section__subtitle text-center reveal">Production apps I've built and shipped</p>
 
-        <!-- Filter buttons — JS populates active state -->
-        <div class="projects__filters reveal" id="project-filters">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
-          <button class="filter-btn" data-filter="frontend">Frontend</button>
-          <button class="filter-btn" data-filter="backend">Backend</button>
-        </div>
+        <div class="projects__grid">
 
-        <div class="projects__grid" id="projects-grid">
-
-          <!-- Project Card — duplicate & edit to add more projects -->
-          <article class="project-card reveal" data-category="fullstack">
+          <!-- ichica.co — FEATURED -->
+          <article class="project-card project-card--featured reveal">
+            <div class="project-card__badge">Featured</div>
             <div class="project-card__top">
-              <span class="project-card__number">01</span>
-              <div class="project-card__links">
-                <a href="#" target="_blank" rel="noopener" aria-label="GitHub repo">
-                  <!-- Simple SVG GitHub icon (no external lib needed) -->
-                  <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                </a>
-                <a href="#" target="_blank" rel="noopener" aria-label="Live demo">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                </a>
-              </div>
+              <h3 class="project-card__title">ichica.co</h3>
+              <a href="https://ichica.co" target="_blank" rel="noopener" class="project-card__link" aria-label="Visit ichica.co">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+              </a>
             </div>
-            <h3 class="project-card__title">DevFlow</h3>
             <p class="project-card__desc">
-              A project management tool for developers — real-time boards,
-              GitHub integration, and automated sprint planning powered by AI.
+              A high-traffic lottery-style web platform serving <strong>140,000+ users</strong> in Japan.
+              Features complex draw mechanics, randomized selection logic, ticketing systems, and
+              a full admin dashboard — all built to handle high concurrency and live production load.
             </p>
+            <!-- Key metrics -->
+            <div class="project-card__metrics">
+              <div class="metric"><span class="metric__val">140K+</span><span class="metric__label">Users</span></div>
+              <div class="metric"><span class="metric__val">Japan</span><span class="metric__label">Market</span></div>
+              <div class="metric"><span class="metric__val">Live</span><span class="metric__label">Status</span></div>
+            </div>
             <ul class="project-card__stack">
-              <li>Next.js</li><li>Node.js</li><li>PostgreSQL</li><li>OpenAI</li>
+              <li>Bubble.io</li><li>Node.js</li><li>Paidy</li><li>GMO-PG</li><li>Fincode</li>
             </ul>
           </article>
 
-          <article class="project-card reveal" data-category="frontend">
+          <!-- sparkable.cc — FEATURED -->
+          <article class="project-card project-card--featured reveal">
+            <div class="project-card__badge">Featured</div>
             <div class="project-card__top">
-              <span class="project-card__number">02</span>
-              <div class="project-card__links">
-                <a href="#" target="_blank" rel="noopener" aria-label="GitHub repo">
-                  <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                </a>
-                <a href="#" target="_blank" rel="noopener" aria-label="Live demo">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                </a>
-              </div>
+              <h3 class="project-card__title">sparkable.cc</h3>
+              <a href="https://sparkable.cc" target="_blank" rel="noopener" class="project-card__link" aria-label="Visit sparkable.cc">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+              </a>
             </div>
-            <h3 class="project-card__title">Aurora UI</h3>
             <p class="project-card__desc">
-              An open-source React component library with 40+ accessible,
-              themeable components. Zero runtime dependencies.
+              A social content platform where users share ideas, post media, and engage with a growing
+              community. Contributed to core feature development, workflow optimization, and database
+              restructuring for improved scalability and performance.
             </p>
+            <div class="project-card__metrics">
+              <div class="metric"><span class="metric__val">Social</span><span class="metric__label">Platform</span></div>
+              <div class="metric"><span class="metric__val">Global</span><span class="metric__label">Reach</span></div>
+              <div class="metric"><span class="metric__val">Live</span><span class="metric__label">Status</span></div>
+            </div>
             <ul class="project-card__stack">
-              <li>React</li><li>TypeScript</li><li>Storybook</li><li>Rollup</li>
+              <li>Bubble.io</li><li>REST APIs</li><li>Media Workflows</li><li>Database Design</li>
             </ul>
           </article>
 
-          <article class="project-card reveal" data-category="backend">
+          <!-- G-AIM -->
+          <article class="project-card reveal">
             <div class="project-card__top">
-              <span class="project-card__number">03</span>
-              <div class="project-card__links">
-                <a href="#" target="_blank" rel="noopener" aria-label="GitHub repo">
-                  <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                </a>
-                <a href="#" target="_blank" rel="noopener" aria-label="Live demo">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                </a>
-              </div>
+              <h3 class="project-card__title">Client Apps — G-AIM Consulting</h3>
             </div>
-            <h3 class="project-card__title">Hyperion API</h3>
             <p class="project-card__desc">
-              A high-performance REST + GraphQL gateway handling 50k req/s
-              with rate limiting, JWT auth, and Redis caching.
+              Delivered multiple end-to-end Bubble.io applications for international clients across
+              industries. Designed scalable database architectures, automated complex business workflows,
+              and extended platform capabilities with Node.js backend services.
             </p>
             <ul class="project-card__stack">
-              <li>Node.js</li><li>GraphQL</li><li>Redis</li><li>Docker</li>
+              <li>Bubble.io</li><li>Node.js</li><li>API Connector</li><li>Make</li><li>n8n</li>
             </ul>
           </article>
 
-          <article class="project-card reveal" data-category="fullstack">
+          <!-- Upwork -->
+          <article class="project-card reveal">
             <div class="project-card__top">
-              <span class="project-card__number">04</span>
-              <div class="project-card__links">
-                <a href="#" target="_blank" rel="noopener" aria-label="GitHub repo">
-                  <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                </a>
-                <a href="#" target="_blank" rel="noopener" aria-label="Live demo">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                </a>
-              </div>
+              <h3 class="project-card__title">MVPs & SaaS Platforms — Upwork</h3>
             </div>
-            <h3 class="project-card__title">Lumina Blog</h3>
             <p class="project-card__desc">
-              A headless CMS-powered blog with MDX, full-text search,
-              newsletter subscriptions, and a 100 Lighthouse score.
+              Built MVPs, SaaS platforms, dashboards, and internal tools for global clients.
+              Integrated payment gateways (Stripe, Apple Pay, Google Pay), designed custom backend
+              logic with Node.js and EJS, and maintained long-term client relationships.
             </p>
             <ul class="project-card__stack">
-              <li>Next.js</li><li>MDX</li><li>Algolia</li><li>Vercel</li>
+              <li>Bubble.io</li><li>Node.js</li><li>Stripe</li><li>EJS</li><li>REST APIs</li>
             </ul>
           </article>
 
@@ -269,29 +289,28 @@
       </div>
     </section>
 
-    <!-- ===================== EXPERIENCE ===================== -->
+    <!-- ===== EXPERIENCE ===== -->
     <section class="section section--alt" id="experience">
       <div class="container">
         <h2 class="section__title text-center reveal">Experience</h2>
-        <p class="section__subtitle text-center reveal">Where I've worked and what I've done</p>
+        <p class="section__subtitle text-center reveal">5+ years building production applications</p>
 
         <div class="timeline">
 
-          <!-- Timeline item — duplicate to add more entries -->
           <div class="timeline__item reveal">
             <div class="timeline__dot"></div>
             <div class="timeline__card">
               <div class="timeline__header">
                 <div>
-                  <h3 class="timeline__role">Senior Full-Stack Engineer</h3>
-                  <p class="timeline__company">Stripe &mdash; San Francisco, CA</p>
+                  <h3 class="timeline__role">Bubble.io Developer</h3>
+                  <p class="timeline__company">Sparkable <span class="timeline__type">Volunteer</span></p>
                 </div>
-                <span class="timeline__date">2022 &ndash; Present</span>
+                <span class="timeline__date">Oct 2025 – Present</span>
               </div>
               <ul class="timeline__list">
-                <li>Led a team of 5 engineers rebuilding the merchant dashboard, cutting load time by 60%.</li>
-                <li>Designed and shipped a real-time notification system serving 2M+ daily active users.</li>
-                <li>Mentored 3 junior developers and drove adoption of TypeScript across the platform team.</li>
+                <li>Contributing to sparkable.cc — a social content platform for sharing posts, media, and ideas</li>
+                <li>Improved workflow efficiency and restructured the database to enhance system performance</li>
+                <li>Collaborating with cross-functional teams on feature development and platform stability</li>
               </ul>
             </div>
           </div>
@@ -301,15 +320,17 @@
             <div class="timeline__card">
               <div class="timeline__header">
                 <div>
-                  <h3 class="timeline__role">Full-Stack Developer</h3>
-                  <p class="timeline__company">Vercel &mdash; Remote</p>
+                  <h3 class="timeline__role">Bubble.io Developer</h3>
+                  <p class="timeline__company">Seleby Inc., Japan <span class="timeline__type">Full-Time</span></p>
                 </div>
-                <span class="timeline__date">2020 &ndash; 2022</span>
+                <span class="timeline__date">Jan 2024 – Jan 2026</span>
               </div>
               <ul class="timeline__list">
-                <li>Built and maintained core features of the Vercel deployment dashboard in Next.js.</li>
-                <li>Reduced CI pipeline time by 40% through parallelization and smart caching strategies.</li>
-                <li>Contributed to the Edge Functions runtime used by 100k+ deployments daily.</li>
+                <li>Built and maintained ichica.co — a lottery-style platform scaled to <strong>140,000+ users</strong></li>
+                <li>Engineered complex draw mechanics, randomized selection logic, and a full ticketing system</li>
+                <li>Integrated secure payment systems (Paidy, GMO-PG, Fincode) with reliable transaction handling</li>
+                <li>Built admin dashboards for managing draws, users, and live platform configuration</li>
+                <li>Optimized workflows for high concurrency, improving performance and system stability in production</li>
               </ul>
             </div>
           </div>
@@ -319,14 +340,53 @@
             <div class="timeline__card">
               <div class="timeline__header">
                 <div>
-                  <h3 class="timeline__role">Front-End Developer</h3>
-                  <p class="timeline__company">Acme Studio &mdash; New York, NY</p>
+                  <h3 class="timeline__role">Bubble.io Developer</h3>
+                  <p class="timeline__company">G-AIM Consulting, Belgium <span class="timeline__type">Freelance</span></p>
                 </div>
-                <span class="timeline__date">2018 &ndash; 2020</span>
+                <span class="timeline__date">Sep 2023 – Present</span>
               </div>
               <ul class="timeline__list">
-                <li>Delivered responsive, accessible UI for 15+ client projects across e-commerce and media.</li>
-                <li>Introduced component-driven development with React, replacing a legacy jQuery codebase.</li>
+                <li>Developing and maintaining Bubble.io applications for international clients across multiple industries</li>
+                <li>Designing scalable database architectures and implementing complex business workflows</li>
+                <li>Extending platform capabilities with custom Node.js backend services when needed</li>
+                <li>Delivering end-to-end solutions from concept to deployment with a focus on performance</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline__item reveal">
+            <div class="timeline__dot"></div>
+            <div class="timeline__card">
+              <div class="timeline__header">
+                <div>
+                  <h3 class="timeline__role">Bubble.io Developer</h3>
+                  <p class="timeline__company">247 Back Office Professionals <span class="timeline__type">Full-Time</span></p>
+                </div>
+                <span class="timeline__date">Feb 2021 – Dec 2022</span>
+              </div>
+              <ul class="timeline__list">
+                <li>Developed and maintained internal systems relied on by daily operations teams</li>
+                <li>Designed efficient data models and enforced privacy rules across the platform</li>
+                <li>Improved application performance through workflow and database optimization</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline__item reveal">
+            <div class="timeline__dot"></div>
+            <div class="timeline__card">
+              <div class="timeline__header">
+                <div>
+                  <h3 class="timeline__role">Bubble.io Developer</h3>
+                  <p class="timeline__company">Upwork <span class="timeline__type">Freelance</span></p>
+                </div>
+                <span class="timeline__date">Jan 2021 – Present</span>
+              </div>
+              <ul class="timeline__list">
+                <li>Delivering end-to-end Bubble.io and hybrid (no-code + Node.js) solutions for global clients</li>
+                <li>Built MVPs, SaaS dashboards, internal tools, and payment-integrated platforms</li>
+                <li>Developed custom backend logic with Node.js and EJS for advanced use cases beyond Bubble.io</li>
+                <li>Maintained long-term client relationships through consistent delivery and quality</li>
               </ul>
             </div>
           </div>
@@ -335,39 +395,47 @@
       </div>
     </section>
 
-    <!-- ===================== CONTACT ===================== -->
+    <!-- ===== CONTACT ===== -->
     <section class="section" id="contact">
       <div class="container contact__grid">
 
         <div class="contact__info reveal">
-          <h2 class="section__title">Get In Touch</h2>
+          <h2 class="section__title">Let's Work Together</h2>
           <p>
-            I'm currently open to new opportunities. Whether you have a project
-            in mind, a question, or just want to say hi — my inbox is always open.
+            I'm currently open to new projects — whether you need a Bubble.io application
+            built from scratch, a performance audit, or a custom backend integration.
+            Drop me a message and let's talk.
           </p>
+
           <ul class="contact__socials">
             <li>
-              <a href="https://github.com" target="_blank" rel="noopener" class="social-link">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                GitHub
+              <a href="mailto:jamesdanielmauricio@gmail.com" class="social-link">
+                <!-- Email icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/>
+                  <polyline points="2,4 12,13 22,4"/>
+                </svg>
+                jamesdanielmauricio@gmail.com
               </a>
             </li>
             <li>
-              <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-link">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM3.56 20.45h3.56V9H3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0z"/></svg>
-                LinkedIn
+              <a href="https://linkedin.com/in/jamesdanielmauricio" target="_blank" rel="noopener" class="social-link">
+                <!-- LinkedIn icon -->
+                <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
+                  <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM3.56 20.45h3.56V9H3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0z"/>
+                </svg>
+                linkedin.com/in/jamesdanielmauricio
               </a>
             </li>
             <li>
-              <a href="https://twitter.com" target="_blank" rel="noopener" class="social-link">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                Twitter / X
-              </a>
-            </li>
-            <li>
-              <a href="mailto:alex@example.com" class="social-link">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
-                alex@example.com
+              <a href="https://ichica.co" target="_blank" rel="noopener" class="social-link">
+                <!-- Globe icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="2" y1="12" x2="22" y2="12"/>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+                ichica.co — Live Project
               </a>
             </li>
           </ul>
@@ -377,12 +445,12 @@
         <form class="contact__form reveal" id="contact-form" novalidate>
           <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Jane Doe" required />
+            <input type="text" id="name" name="name" placeholder="Your name" required />
             <span class="form-error" id="name-error"></span>
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+            <input type="email" id="email" name="email" placeholder="you@example.com" required />
             <span class="form-error" id="email-error"></span>
           </div>
           <div class="form-group">
@@ -391,7 +459,6 @@
             <span class="form-error" id="message-error"></span>
           </div>
           <button type="submit" class="btn btn--primary btn--full">Send Message</button>
-          <!-- Success / error feedback shown by JS -->
           <p class="form-status" id="form-status" aria-live="polite"></p>
         </form>
 
@@ -400,15 +467,14 @@
 
   </main>
 
-  <!-- ===================== FOOTER ===================== -->
+  <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container footer__inner">
-      <p>Designed &amp; built by <strong>Alex Carter</strong></p>
-      <p class="footer__copy">&copy; <span id="year"></span> All rights reserved.</p>
+      <p>Designed &amp; built by <strong>James Daniel Mauricio</strong></p>
+      <p class="footer__copy">&copy; <span id="year"></span> · Philippines (GMT+8)</p>
     </div>
   </footer>
 
-  <!-- Back-to-top button -->
   <button class="back-to-top" id="back-to-top" aria-label="Back to top">&#8679;</button>
 
   <script src="script.js"></script>
