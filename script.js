@@ -1,89 +1,84 @@
 /* ================================================================
-   PORTFOLIO — script.js
-   Sections:
-   1. Theme toggle (dark / light)
-   2. Navbar — scroll style + active link highlighting
+   James Daniel Mauricio — Portfolio
+   script.js
+
+   1. Theme toggle (dark ↔ light, persisted to localStorage)
+   2. Navbar — scrolled style + active-link highlighting
    3. Hamburger mobile menu
-   4. Scroll-reveal (IntersectionObserver)
-   5. Skill bars — animated fill on scroll into view
-   6. Project filtering
-   7. Contact form — client-side validation + simulated submit
-   8. Back-to-top button
-   9. Footer year
+   4. Scroll-reveal via IntersectionObserver
+   5. Project filtering
+   6. Contact form — validation + simulated submit
+   7. Back-to-top button
+   8. Footer year
 ================================================================ */
 
-/* ── Helpers ──────────────────────────────────────────────── */
-const $  = (sel, ctx = document) => ctx.querySelector(sel);
-const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
+/* ── Tiny selector helpers ─────────────────────────────────── */
+const $  = (s, c = document) => c.querySelector(s);
+const $$ = (s, c = document) => [...c.querySelectorAll(s)];
 
 
 /* ── 1. THEME TOGGLE ────────────────────────────────────────── */
 (function initTheme() {
-  const html      = document.documentElement;
-  const btn       = $('#theme-toggle');
-  const icon      = $('#theme-icon');
+  const html = document.documentElement;
+  const btn  = $('#theme-toggle');
+  const icon = $('#theme-icon');
 
-  // Persist preference across page loads
-  const saved = localStorage.getItem('theme') || 'dark';
+  const saved = localStorage.getItem('jdm-theme') || 'dark';
   html.setAttribute('data-theme', saved);
   icon.textContent = saved === 'dark' ? '☀️' : '🌙';
 
   btn.addEventListener('click', () => {
-    const current = html.getAttribute('data-theme');
-    const next    = current === 'dark' ? 'light' : 'dark';
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     html.setAttribute('data-theme', next);
     icon.textContent = next === 'dark' ? '☀️' : '🌙';
-    localStorage.setItem('theme', next);
+    localStorage.setItem('jdm-theme', next);
   });
 })();
 
 
 /* ── 2. NAVBAR ──────────────────────────────────────────────── */
 (function initNavbar() {
-  const navbar  = $('#navbar');
-  const links   = $$('.navbar__links a');
+  const navbar   = $('#navbar');
+  const links    = $$('.navbar__links a');
   const sections = links.map(a => $(a.getAttribute('href')));
 
-  // Add scrolled class when user scrolls past 50px
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 50);
-    highlightActiveLink();
+    highlightActive();
   }, { passive: true });
 
-  // Highlight the link whose section is currently in view
-  function highlightActiveLink() {
-    const scrollY = window.scrollY + window.innerHeight / 3;
-    sections.forEach((section, i) => {
-      if (!section) return;
-      if (section.offsetTop <= scrollY &&
-          section.offsetTop + section.offsetHeight > scrollY) {
+  function highlightActive() {
+    const mid = window.scrollY + window.innerHeight / 3;
+    sections.forEach((sec, i) => {
+      if (!sec) return;
+      if (sec.offsetTop <= mid && sec.offsetTop + sec.offsetHeight > mid) {
         links.forEach(l => l.classList.remove('active'));
         links[i].classList.add('active');
       }
     });
   }
 
-  highlightActiveLink();
+  highlightActive();
 })();
 
 
-/* ── 3. HAMBURGER MOBILE MENU ───────────────────────────────── */
+/* ── 3. HAMBURGER ───────────────────────────────────────────── */
 (function initMobileMenu() {
-  const hamburger = $('#hamburger');
-  const navLinks  = $('.navbar__links');
+  const btn   = $('#hamburger');
+  const links = $('.navbar__links');
 
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    navLinks.classList.toggle('open');
-    hamburger.setAttribute('aria-expanded',
-      hamburger.classList.contains('open').toString());
+  btn.addEventListener('click', () => {
+    const open = btn.classList.toggle('open');
+    links.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', String(open));
   });
 
-  // Close menu when a link is tapped
+  // Close on link tap
   $$('.navbar__links a').forEach(a => {
     a.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      navLinks.classList.remove('open');
+      btn.classList.remove('open');
+      links.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
     });
   });
 })();
@@ -91,119 +86,51 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
 /* ── 4. SCROLL REVEAL ───────────────────────────────────────── */
 (function initReveal() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // animate once
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
       }
     });
   }, { threshold: 0.12 });
 
-  $$('.reveal').forEach(el => observer.observe(el));
+  $$('.reveal').forEach(el => io.observe(el));
 })();
 
 
-/* ── 5. SKILL BAR ANIMATION ─────────────────────────────────── */
-(function initSkillBars() {
-  // Fills each bar to its data-level value when it enters the viewport
-  const bars     = $$('.skill-bar__fill');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const level = entry.target.dataset.level || '0';
-        entry.target.style.width = level + '%';
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.3 });
-
-  bars.forEach(bar => observer.observe(bar));
-})();
+/* ── 5. PROJECT FILTERING ───────────────────────────────────── */
+/* Not used in this version (all projects visible by default),
+   but the structure is here if you want to add data-category
+   attributes and filter buttons later. */
 
 
-/* ── 6. PROJECT FILTERING ───────────────────────────────────── */
-(function initFilter() {
-  const filterBtns = $$('.filter-btn');
-  const cards      = $$('.project-card');
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const filter = btn.dataset.filter;
-
-      // Update active button
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      // Show / hide cards with a quick fade
-      cards.forEach(card => {
-        const match = filter === 'all' || card.dataset.category === filter;
-        if (match) {
-          card.classList.remove('hidden');
-          // Re-trigger reveal animation
-          card.classList.remove('visible');
-          requestAnimationFrame(() => card.classList.add('visible'));
-        } else {
-          card.classList.add('hidden');
-        }
-      });
-    });
-  });
-})();
-
-
-/* ── 7. CONTACT FORM ────────────────────────────────────────── */
-(function initContactForm() {
-  const form      = $('#contact-form');
+/* ── 6. CONTACT FORM ────────────────────────────────────────── */
+(function initForm() {
+  const form   = $('#contact-form');
   if (!form) return;
 
-  const nameInput = $('#name');
-  const emailInput= $('#email');
-  const msgInput  = $('#message');
-  const status    = $('#form-status');
+  const name   = $('#name');
+  const email  = $('#email');
+  const msg    = $('#message');
+  const status = $('#form-status');
 
-  function showError(inputId, message) {
-    const el = $(`#${inputId}-error`);
-    if (el) el.textContent = message;
-  }
+  const setError  = (id, txt) => { const e = $(`#${id}-error`); if (e) e.textContent = txt; };
+  const clearErr  = (id)      => { const e = $(`#${id}-error`); if (e) e.textContent = '';  };
+  const validMail = (v)       => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 
-  function clearError(inputId) {
-    const el = $(`#${inputId}-error`);
-    if (el) el.textContent = '';
-  }
+  [name, email, msg].forEach(inp => inp.addEventListener('input', () => clearErr(inp.id)));
 
-  function validateEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  }
-
-  // Clear errors on input
-  [nameInput, emailInput, msgInput].forEach(input => {
-    input.addEventListener('input', () => clearError(input.id));
-  });
-
-  form.addEventListener('submit', async (e) => {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
+    let ok = true;
 
-    let valid = true;
+    if (!name.value.trim())         { setError('name',    'Please enter your name.');               ok = false; }
+    if (!validMail(email.value))    { setError('email',   'Please enter a valid email.');           ok = false; }
+    if (msg.value.trim().length < 10) { setError('message','Message must be at least 10 chars.');  ok = false; }
 
-    if (!nameInput.value.trim()) {
-      showError('name', 'Please enter your name.');
-      valid = false;
-    }
+    if (!ok) return;
 
-    if (!validateEmail(emailInput.value.trim())) {
-      showError('email', 'Please enter a valid email address.');
-      valid = false;
-    }
-
-    if (!msgInput.value.trim() || msgInput.value.trim().length < 10) {
-      showError('message', 'Message must be at least 10 characters.');
-      valid = false;
-    }
-
-    if (!valid) return;
-
-    // Simulate an async form submission (replace with your actual API call)
     const submitBtn = form.querySelector('button[type="submit"]');
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending…';
@@ -211,8 +138,15 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
     status.className = 'form-status';
 
     try {
-      await fakeSubmit({ name: nameInput.value, email: emailInput.value, message: msgInput.value });
-      status.textContent = 'Message sent! I\'ll get back to you soon.';
+      /* ── Replace fakeSubmit() with a real fetch() to your backend or Formspree:
+         await fetch('https://formspree.io/f/YOUR_ID', {
+           method: 'POST',
+           headers: { 'Content-Type': 'application/json' },
+           body: JSON.stringify({ name: name.value, email: email.value, message: msg.value })
+         });
+      ── */
+      await fakeSubmit();
+      status.textContent = "Message sent! I'll get back to you soon.";
       status.classList.add('success');
       form.reset();
     } catch {
@@ -224,28 +158,22 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
     }
   });
 
-  // Replace this with a real fetch() call to your back-end or Formspree
-  function fakeSubmit(data) {
-    console.log('Form data (not yet wired to a backend):', data);
-    return new Promise((resolve) => setTimeout(resolve, 1200));
+  function fakeSubmit() {
+    return new Promise(res => setTimeout(res, 1200));
   }
 })();
 
 
-/* ── 8. BACK-TO-TOP ─────────────────────────────────────────── */
+/* ── 7. BACK-TO-TOP ─────────────────────────────────────────── */
 (function initBackToTop() {
   const btn = $('#back-to-top');
-
   window.addEventListener('scroll', () => {
     btn.classList.toggle('visible', window.scrollY > 400);
   }, { passive: true });
-
-  btn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+  btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 })();
 
 
-/* ── 9. FOOTER YEAR ─────────────────────────────────────────── */
-const yearEl = $('#year');
-if (yearEl) yearEl.textContent = new Date().getFullYear();
+/* ── 8. FOOTER YEAR ─────────────────────────────────────────── */
+const yr = $('#year');
+if (yr) yr.textContent = new Date().getFullYear();
