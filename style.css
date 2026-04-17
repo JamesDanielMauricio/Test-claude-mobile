@@ -1066,7 +1066,7 @@ strong { color: var(--accent); font-weight: 700; }
      down by ~(viewport - content) / 2, creating blank space at top. */
   .hero {
     align-items: flex-start;
-    padding-top: calc(var(--navbar-h) + var(--space-6));
+    padding-top: var(--navbar-h);
     padding-bottom: var(--space-8);
   }
   .navbar__links {
