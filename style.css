@@ -1057,7 +1057,14 @@ strong { color: var(--accent); font-weight: 700; }
 
 /* ── NAV: mobile navigation (≤ 768px) ───────────────────── */
 @media (max-width: 768px) {
-  /* Slide-down mobile menu */
+  /* Hero: start content from top instead of vertically centering.
+     align-items:center on a 100dvh flex container pushes content
+     down by ~(viewport - content) / 2, creating blank space at top. */
+  .hero {
+    align-items: flex-start;
+    padding-top: calc(var(--navbar-h) + var(--space-6));
+    padding-bottom: var(--space-8);
+  }
   .navbar__links {
     position: fixed;
     top: var(--navbar-h);
