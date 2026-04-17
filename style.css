@@ -954,7 +954,7 @@ strong { color: var(--accent); font-weight: 700; }
   .container { padding: 0 var(--space-4); }
 
   /* Reduce section vertical space */
-  .section { padding: var(--space-12) 0; }
+  .section { padding: var(--space-8) 0; }
 
   /* Hero */
   .hero__name {
@@ -972,7 +972,10 @@ strong { color: var(--accent); font-weight: 700; }
 
   /* Section titles */
   .section__title    { font-size: var(--fs-2xl); }
-  .section__subtitle { font-size: var(--fs-base); margin-bottom: var(--space-6); }
+  .section__subtitle { font-size: var(--fs-base); margin-bottom: var(--space-4); }
+
+  /* Compact skill tags so more fit per row */
+  .tag { font-size: var(--fs-xs); padding: .3rem .75rem; }
 
   /* Skills — keep 1 column, tighter padding */
   .skill-category { padding: var(--space-4) var(--space-6); }
@@ -997,14 +1000,24 @@ strong { color: var(--accent); font-weight: 700; }
 
 /* ── SM: large phones (≥ 480px) ──────────────────────────── */
 @media (min-width: 480px) {
-  .section { padding: var(--space-16) 0; }
+  .section { padding: var(--space-12) 0; }
 
   .hero__badges { gap: var(--space-3); }
+
+  /* Slightly larger tags than XS but still compact */
+  .tag { font-size: var(--fs-xs); padding: .35rem .9rem; }
+
+  /* Keep subtitle spacing tight below 640px */
+  .section__subtitle { margin-bottom: var(--space-6); }
 }
 
 /* ── MD: tablet / landscape (≥ 640px) ────────────────────── */
 @media (min-width: 640px) {
-  .section { padding: var(--space-24) 0; }
+  .section { padding: var(--space-16) 0; }
+
+  /* Restore full tag size and subtitle spacing on tablet+ */
+  .tag { font-size: var(--fs-sm); padding: .4rem 1rem; }
+  .section__subtitle { margin-bottom: var(--space-12); }
 
   /* 2-column skill cards */
   .skills__grid { grid-template-columns: 1fr 1fr; }
