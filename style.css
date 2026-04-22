@@ -1071,7 +1071,7 @@ strong { color: var(--accent); font-weight: 700; }
     padding-bottom: var(--space-8);
   }
   .navbar__links {
-    display: hidden;
+    display: none;
     position: fixed;
     top: var(--navbar-h);
     left: 0; right: 0;
