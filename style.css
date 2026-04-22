@@ -259,6 +259,7 @@ strong { color: var(--accent); font-weight: 700; }
   min-height: 100dvh;
   display: flex;
   align-items: center;
+  padding-top: var(--navbar-h);
   position: relative;
   overflow: hidden;
 }
@@ -1070,7 +1071,7 @@ strong { color: var(--accent); font-weight: 700; }
     padding-bottom: var(--space-8);
   }
   .navbar__links {
-    display: none;
+    display: hidden;
     position: fixed;
     top: var(--navbar-h);
     left: 0; right: 0;
