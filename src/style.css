@@ -1087,12 +1087,6 @@ strong { color: var(--accent); font-weight: 700; }
 
   .navbar__links.open {
     display: flex;
-    animation: menuSlideDown .22s ease forwards;
-  }
-
-  @keyframes menuSlideDown {
-    from { opacity: 0; transform: translateY(-6px); }
-    to   { opacity: 1; transform: translateY(0); }
   }
 
   .hamburger { display: flex; }
