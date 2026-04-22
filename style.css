@@ -1077,22 +1077,23 @@ strong { color: var(--accent); font-weight: 700; }
     border-bottom: 1px solid var(--border);
     flex-direction: column;
     align-items: center;
-    padding: var(--space-8) 0;
     gap: var(--space-6);
-    transform: translateY(calc(-100% - var(--navbar-h)));
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
     visibility: hidden;
     pointer-events: none;
-    /* delay visibility until after slide-up finishes; no delay on slide-down */
-    transition: transform .3s ease, visibility 0s .3s;
+    transition: max-height .3s ease, padding .3s ease, visibility 0s .3s;
     z-index: 99;
   }
 
-  .navbar__links a { font-size: var(--fs-base); } /* bigger tap targets */
+  .navbar__links a { font-size: var(--fs-base); }
   .navbar__links.open {
-    transform: translateY(0);
+    max-height: 500px;
+    padding: var(--space-8) 0;
     visibility: visible;
     pointer-events: auto;
-    transition: transform .3s ease, visibility 0s 0s;
+    transition: max-height .3s ease, padding .3s ease, visibility 0s 0s;
   }
 
   .hamburger { display: flex; }
