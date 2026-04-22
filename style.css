@@ -1079,7 +1079,7 @@ strong { color: var(--accent); font-weight: 700; }
     align-items: center;
     padding: var(--space-8) 0;
     gap: var(--space-6);
-    transform: translateY(-110%);
+    transform: translateY(calc(-100% - var(--navbar-h)));
     visibility: hidden;
     pointer-events: none;
     /* delay visibility until after slide-up finishes; no delay on slide-down */
