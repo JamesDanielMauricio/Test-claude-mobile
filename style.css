@@ -199,7 +199,8 @@ strong { color: var(--accent); font-weight: 700; }
   font-family: var(--font-mono);
 }
 
-.navbar__links { display: flex; gap: var(--space-8); }
+.navbar__links { display: none; gap: var(--space-8); }
+@media (min-width: 769px) { .navbar__links { display: flex; } }
 
 .navbar__links a {
   font-size: var(--fs-sm);
