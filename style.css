@@ -259,7 +259,6 @@ strong { color: var(--accent); font-weight: 700; }
   min-height: 100dvh;
   display: flex;
   align-items: center;
-  padding-top: var(--navbar-h);
   position: relative;
   overflow: hidden;
 }
